@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Арзютов 3</title>
+    <meta charset="utf-8">
+    <script type="text/javascript">
+        //Функция для создания массива пользователем
+        function newMas(){
+            var n = Number(prompt("Введите количество элементов:"));
+            var nMas = [];
+            for(var i=0; i<n; i++){
+                nMas[i]=Number(prompt("Введите число:"));
+            }
+            return nMas;
+        }
+
+        //Функция для нахождения индекса максимального по модулю элемента
+        function findIMaxModul(arr){
+            var max=0;
+            for(var i=1; i<arr.length; i++){
+                if(Math.abs(arr[i])>Math.abs(arr[max])){
+                    max=i;
+                }
+            }
+            return max;
+        }
+
+        //Функция для нахождения индекса минимального по модулю элемента
+        function findIMinModul(arr){
+            var min=0;
+            for(var i=1; i<arr.length; i++){
+                if(Math.abs(arr[i])<Math.abs(arr[min])){
+                    min=i;
+                }
+            }
+            return min;
+        }
+
+        var myArray = newMas();
+
+        //Найти сумму положительных элементов массива
+        var sumPolozhEl = 0;
+        for(var i = 0; i < myArray.length; i++){
+            if (myArray[i] > 0) {
+                sumPolozhEl+=myArray[i];
+            }
+        }
+
+        //Найти произведение элементов массива, расположенных между максимальным по модулю и минимальным по модулю элементами
+        var IndMaxModul = findIMaxModul(myArray);
+        var IndMinModul = findIMinModul(myArray);
+        var proizv = 1;
+        if(IndMinModul<IndMaxModul){
+            for(var k = IndMinModul+1; k<IndMaxModul; k++){
+            proizv*=myArray[k];
+            } 
+        }
+        else if(IndMaxModul<IndMinModul){
+            for(var k = IndMaxModul+1; k<IndMinModul; k++){
+            proizv*=myArray[k];
+            } 
+        }
+        else{
+            proizv = 0;
+        }
+
+        //Упорядочить элементы массива по убыванию
+        myArray.sort( (a, b) =>  b - a);
+        var str = myArray.join("; ");
+        document.writeln("Сумма положительных элементов массива: "+sumPolozhEl+"; Произведение элементов массива, расположенных между максимальным по модулю и минимальным по модулю элементами: "+proizv+"; Массив в порядке убывания: "+str);
+      
+    </script>
+</head>
+<body>
+
+</body>
+</html>
