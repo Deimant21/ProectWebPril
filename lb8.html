@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Арзютов 8</title>
+    <meta charset="utf-8">
+</head>
+<body style='background-color: white; color: black' class = "myBody">
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris porta nibh lacus, sed porttitor nisi tristique eget. Curabitur ullamcorper lacus ut mauris sollicitudin tristique. Quisque blandit ligula a odio ultricies, a congue dui molestie. Nulla varius et tortor sed aliquam. Quisque nec iaculis diam. Donec in velit orci. Cras vestibulum vitae magna vel hendrerit.
+
+Nulla dignissim mi augue, et varius orci elementum sit amet. Aenean vulputate ligula sem, eu euismod neque pretium et. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nullam a lectus elementum ante auctor dictum. Curabitur pulvinar vulputate enim ut egestas. Duis fermentum, ex sit amet fermentum finibus, mi nulla hendrerit nisi, non pretium urna odio vel quam. Ut sit amet ante quis leo fringilla sodales venenatis vitae eros. Vestibulum in ornare est. Phasellus sollicitudin eu ipsum quis congue. Curabitur et arcu in neque ultrices porta a at est. Nulla sodales, mi nec dignissim hendrerit, odio enim iaculis enim, non varius urna ex vitae augue. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc lobortis, quam ac hendrerit malesuada, dolor arcu dictum lectus, non accumsan dui mi non nisl.</p>
+<h2><a href="https://www.google.ru/" class="myA">Ссылка</a></h2>
+    <script type="text/javascript">
+        var a = prompt("Введите цвет фона:");
+        var b = prompt("Введите цвет текста:");
+        var c = prompt("Введите ссылку");
+        var bodyU = document.querySelector("body.myBody");
+        bodyU.setAttribute("style", `background-color:${a}`);
+        var root = document.documentElement;
+        root.style.color = b;
+        var ancor = document.querySelector("a.myA");
+        ancor.setAttribute("href", `${c}`);
+    </script>
+</body>
+</html>
